@@ -1,4 +1,10 @@
+*.user
+*.suo
+
 *.dll
 *.pdb
 *.xap
 *.exe
+
+Source/*/bin
+Source/*/obj
