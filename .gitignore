@@ -1,0 +1,10 @@
+*.dll
+*.xap
+*.pdb
+*.exe
+
+*.user
+*.suo
+
+Source/*/Bin
+Source/*/Obj
