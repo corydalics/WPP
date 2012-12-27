@@ -43,7 +43,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="WP Player" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="file Servers" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="file servers" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -53,17 +53,15 @@
                     <TextBlock Text="{Binding}" />
                 </DataTemplate> 
             </Grid.Resources>
-            <ListBox ItemsSource="{Binding Path=Servers}" ItemTemplate="{StaticResource ResourceKey=ServerItemTemplate}" SelectedItem="{Binding Path=SelectServerCommand}"/>
+            <ListBox ItemsSource="{Binding Path=Servers}" ItemTemplate="{StaticResource ResourceKey=ServerItemTemplate}" SelectedItem="{Binding Path=SelectedServer}"/>
         </Grid>
 
         <Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
-        <helpers:ApplicationBarCommanded>
-            <helpers:ApplicationBarCommanded.Buttons>
-                <helpers:ApplicationBarIconButtonCommanded IconUri="/Assets/AppBar/add.png" Text="new" IsEnabled="True" />
-            </helpers:ApplicationBarCommanded.Buttons>
-        </helpers:ApplicationBarCommanded>
+        <shell:ApplicationBar Mode="Default">
+            <helpers:ApplicationBarIconButtonCommanded IconUri="/Assets/AppBar/add.png" Text="new" IsEnabled="True" Click="AddNewServer"/>
+        </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

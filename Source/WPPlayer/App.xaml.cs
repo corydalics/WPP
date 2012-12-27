@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using WPPlayer.Models;
 using WPPlayer.Resources;
-using WPPlayer.Views;
+using WPPlayer.Utils;
+using WPPlayer.ViewModels;
 
 namespace WPPlayer
 {
-    public partial class App : Application
+    public partial class App
     {
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -24,11 +25,14 @@ namespace WPPlayer
         /// </summary>
         public App()
         {
+
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 
             // Standard XAML initialization
-            InitializeComponent();
+            InitializeComponent();            
+
+            InitializeUnity();
 
             // Phone-specific initialization
             InitializePhoneApplication();
@@ -57,6 +61,15 @@ namespace WPPlayer
             }
 
         }
+
+        private void InitializeUnity()
+        {
+            var unity = UnityContainer.Instance;
+            unity.Register<MainPageViewModel, MainPageViewModel>();
+            unity.Register<IServerProvider, ServerProvider>();
+            unity.Register<ServerEditViewModel, ServerEditViewModel>();
+        }
+
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated

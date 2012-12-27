@@ -5,7 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:helpers="clr-namespace:WPPlayer.Helpers"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -30,6 +30,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -41,21 +42,29 @@
                        Text="Address" />
             
             <TextBox Grid.Row="0" Grid.Column="1"
-                     Text="{Binding Path=Address}"/>
+                     Text="{Binding Path=SelectedServer.EndPoint.Address}"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0"
                        VerticalAlignment="Center"
                        Text="Port" />
 
             <TextBox Grid.Row="1" Grid.Column="1"
-                     Text="{Binding Path=Port}"/>
+                     Text="{Binding Path=SelectedServer.EndPoint.Port}"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Text="Host Name" />
+
+            <TextBox Grid.Row="2" Grid.Column="1"
+                     Text="{Binding Path=SelectedServer.Name}"/>
+
 
         </Grid>
     </Grid>
     
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="SaveDetails" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

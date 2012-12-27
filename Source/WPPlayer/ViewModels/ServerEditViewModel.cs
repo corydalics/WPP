@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Threading.Tasks;
 using WPPlayer.Models;
 
 namespace WPPlayer.ViewModels
 {
-    class ServerEditViewModel : BaseViewModel
+    public class ServerEditViewModel : BaseViewModel
     {
+        private readonly IServerProvider _serverProvider;
         private Server _selectedServer;
+
+        public ServerEditViewModel(IServerProvider serverProvider)
+        {
+            _serverProvider = serverProvider;
+
+        }
+
         public Server SelectedServer
         {
             get
@@ -24,6 +27,9 @@ namespace WPPlayer.ViewModels
             }
         }
 
-        public ICommand SaveCommand { get ; set; }
+        public void SaveDetails()
+        {
+            _serverProvider.Add(SelectedServer);
+        }
     }
 }

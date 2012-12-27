@@ -93,11 +93,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\ApplicationBarCommanded.cs" />
     <Compile Include="Helpers\ApplicationBarIconButtonCommanded.cs" />
     <Compile Include="Helpers\ApplicationBarMenuItemCommanded.cs" />
+    <Compile Include="Helpers\GenericCommand.cs" />
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Models\IServerProvider.cs" />
     <Compile Include="Models\Server.cs" />
+    <Compile Include="Models\ServerProvider.cs" />
+    <Compile Include="Utils\IUnityContainer.cs" />
+    <Compile Include="Utils\UnityContainer.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\FolderListViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
