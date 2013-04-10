@@ -27,13 +27,7 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Grid.Resources>
-                <DataTemplate x:Key="FolderListItemTemplate">
-                    <TextBlock Text="{Binding Path=Name}"></TextBlock>
-                </DataTemplate>                   
-            </Grid.Resources>
-            
-            <ListBox ItemsSource="{Binding Path=FolderItems}" ItemTemplate="{StaticResource ResourceKey=FolderListItemTemplate}"/>
+            <ListBox ItemsSource="{Binding Path=FolderItems}"/>
         </Grid>
     </Grid>
 

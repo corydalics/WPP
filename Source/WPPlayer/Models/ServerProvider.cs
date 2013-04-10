@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 
 namespace WPPlayer.Models
@@ -11,15 +10,12 @@ namespace WPPlayer.Models
         public ServerProvider()
         {
             _servers = new List<Server>();
-            SelectedServer = _servers.FirstOrDefault();
         }
 
         public IEnumerable<Server> Servers
         {
             get { return _servers; }
         }
-
-        public Server SelectedServer { get; set; }
 
         public void Add(Server server)
         {

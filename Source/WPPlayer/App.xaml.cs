@@ -68,7 +68,6 @@ namespace WPPlayer
             unity.Register<MainPageViewModel, MainPageViewModel>();
             unity.Register<IServerProvider, ServerProvider>();
             unity.Register<ServerEditViewModel, ServerEditViewModel>();
-            unity.Register<FolderListViewModel, FolderListViewModel>();
         }
 
 

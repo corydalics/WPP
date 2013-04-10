@@ -42,21 +42,21 @@
                        Text="Address" />
             
             <TextBox Grid.Row="0" Grid.Column="1"
-                     Text="{Binding Path=Address, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                     Text="{Binding Path=SelectedServer.EndPoint.Address}"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0"
                        VerticalAlignment="Center"
                        Text="Port" />
 
             <TextBox Grid.Row="1" Grid.Column="1"
-                     Text="{Binding Path=Port, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                     Text="{Binding Path=SelectedServer.EndPoint.Port}"/>
 
             <TextBlock Grid.Row="2" Grid.Column="0"
                        VerticalAlignment="Center"
                        Text="Host Name" />
 
             <TextBox Grid.Row="2" Grid.Column="1"
-                     Text="{Binding Path=HostName, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                     Text="{Binding Path=SelectedServer.Name}"/>
 
 
         </Grid>
